@@ -13,6 +13,7 @@ Le tout est **orchestré via Kubernetes** avec un **autoscaling dynamique**.
 
 ---
 ## Structure du projet (arborescence)
+```bash
 projet-crv/
 ├── Redis/
 │   ├── redis-deployment.yml
@@ -39,6 +40,7 @@ projet-crv/
 │   └── deploy-all.sh
 ├── README.md
 └── rapport.pdf
+```
 ##  Technologies utilisées
 
 -  **Kubernetes** : orchestration des conteneurs  
