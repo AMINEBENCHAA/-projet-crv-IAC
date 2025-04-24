@@ -12,35 +12,7 @@ Ce projet met en œuvre une **architecture cloud-native** complète composée de
 Le tout est **orchestré via Kubernetes** avec un **autoscaling dynamique**.
 
 ---
-## Structure du projet (arborescence)
-```bash
-projet-crv/
-├── Redis/
-│   ├── redis-deployment.yml
-│   ├── redis-service.yml
-│   ├── redis-replica-deployment.yml
-│   ├── redis-replica-service.yml
-│   └── redis-replica-hpa.yml
-├── NodeJs/
-│   ├── node-deployment.yml
-│   ├── node-service.yml
-│   ├── node-hpa.yml
-│   └── Dockerfile        # Dockerfile pour Node.js ici
-├── React/
-│   ├── react-deployment.yml
-│   ├── react-service.yml
-│   └── Dockerfile        # Dockerfile pour React ici
-├── monitoring/
-│   ├── prometheus-configmap.yml
-│   ├── prometheus-deployment.yml
-│   ├── prometheus-service.yml
-│   ├── grafana-deployment.yml
-│   └── grafana-service.yml
-├── scripts/
-│   └── deploy-all.sh
-├── README.md
-└── rapport.pdf
-```
+
 ##  Technologies utilisées
 
 -  **Kubernetes** : orchestration des conteneurs  
