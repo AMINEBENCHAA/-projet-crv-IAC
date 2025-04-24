@@ -1,36 +1,42 @@
-README.md
+#  Projet CRV - IAC
 
- Projet CRV - IAC
-Présentation
+##  Présentation
 
-Ce projet met en œuvre une architecture cloud-native complète composée de Redis (avec réplication), Node.js (stateless backend), React (frontend), Prometheus et Grafana pour le monitoring, le tout orchestré via Kubernetes avec autoscaling dynamique.
+Ce projet met en œuvre une **architecture cloud-native** complète composée de :
 
-Technologies utilisées
+- **Redis** (avec réplication)
+- **Node.js** (backend stateless)
+- **React** (frontend)
+- **Prometheus** & **Grafana** (monitoring)
 
-Kubernetes : orchestration des conteneurs
+Le tout est **orchestré via Kubernetes** avec un **autoscaling dynamique**.
 
-Redis : base de données clé/valeur (master + replicas)
+---
 
-Node.js : backend stateless accédant à Redis
+##  Technologies utilisées
 
-React : frontend léger
+-  **Kubernetes** : orchestration des conteneurs  
+-  **Redis** : base de données clé/valeur (master + replicas)  
+-  **Node.js** : backend stateless accédant à Redis  
+-  **React** : frontend léger  
+-  **Prometheus** : collecte de métriques  
+-  **Grafana** : visualisation des métriques  
 
-Prometheus : collecte de métriques
+---
 
-Grafana : visualisation des métriques
+##  Déploiement de l'infrastructure
 
-🛠️ Déploiement de l'infrastructure
+> Prérequis : `minikube` et `kubectl` installés.
 
-Assurez-vous que minikube et kubectl sont installés.
-
+```bash
 # Démarrer Minikube
 minikube start
 
 # Activer le metrics-server (pour l'autoscaling)
 minikube addons enable metrics-server
 
-# Lancer le déploiement complet\./scripts/deploy-all.sh
-
+# Lancer le déploiement complet
+./scripts/deploy-all.sh
 🌐 Accès aux services
 
 minikube service react-service     # Accès à l'application web
@@ -51,13 +57,13 @@ Vérifier :
 kubectl get hpa
 kubectl top pod
 
-📊 Monitoring
+# Monitoring
 
 Prometheus scrape automatiquement /metrics sur node-service
 
 Grafana se connecte à Prometheus comme source de données
 
-🐳 Docker
+# Docker
 
 Les Dockerfiles sont inclus :
 
@@ -74,16 +80,4 @@ docker push <votre-dockerhub>/node-redis:1.0.0
 cd ../React
 docker build -t <votre-dockerhub>/react-frontend:1.0.0 .
 docker push <votre-dockerhub>/react-frontend:1.0.0
-
-📄 Rapport
-
-Un rapport PDF est fourni (rapport.pdf) expliquant l'architecture, les choix techniques, et la reproductibilité du projet.
-
-🙌 Auteurs
-
-BENCHAA Amine
-
-Ce projet a été réalisé dans le cadre du cours CRV - ESI SBA, 2025.
-
-Besoin d’aide ? Contactez-moi sur GitHub ou via email.
 
